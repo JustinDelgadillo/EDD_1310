@@ -16,70 +16,70 @@ public class TareaListasSimplementeLigadas {
         Lista<Integer> lista = new Lista<>();
         System.out.println(lista);
         
-        System.out.println("Contiene algo la lista?:\t "+ lista.estaVacio());
+        System.out.println("Contiene algo la lista?:\t "+ lista.itsEmpty());
         
-        System.out.println("El tamaño es de:\t "+ lista.tamanio);
+        System.out.println("El tamaño es de:\t "+ lista.Longitud);
         
         System.out.println("Al inicio añadimos el valor 63");
-        lista.agregarAlInicio(63);
+        lista.addI(63);
         System.out.println(lista);
         System.out.println("Al inicio añadimos el valor 78");
-        lista.agregarAlInicio(78);
+        lista.addI(78);
         System.out.println(lista);
         System.out.println("Al inicio añadimos el valor 16");
-        lista.agregarAlInicio(16);
+        lista.addI(16);
         System.out.println(lista);
         System.out.println("Al inicio añadimos el valor 93");
-        lista.agregarAlInicio(93);
+        lista.addI(93);
         System.out.println(lista); 
         
         System.out.println("**********");        
         
         System.out.println("Al final añadimos el valor 21");
-        lista.agragarAlFInal(21);
+        lista.addF(21);
         System.out.println(lista);
         System.out.println("Al final añadimos el valor 33");
-        lista.agragarAlFInal(33);
+        lista.addF(33);
         System.out.println(lista);
         System.out.println("Al final añadimos el valor 89");
-        lista.agragarAlFInal(89);
+        lista.addF(89);
         System.out.println(lista);
         
         System.out.println("**********");  
         
-        System.out.println("Al final añadimos el valor 20 despues de 33");
-        lista.agragarDespuesDe(33, 20);
+        System.out.println("Al final añadimos el valor 20 despues de 89");
+        lista.addD(89, 20);
         System.out.println(lista);
-        System.out.println("Al final añadimos el valor 10 despues de 16");
-        lista.agragarDespuesDe(16, 10);
+        System.out.println("Al final añadimos el valor 10 despues de 20");
+        lista.addD(20, 10);
         System.out.println(lista);
-        System.out.println("Al final añadimos el valor 18 despues de 78");
-        lista.agragarDespuesDe(78, 18);
+        System.out.println("Al final añadimos el valor 18 despues de 10");
+        lista.addD(10, 18);
         System.out.println(lista);
         
         System.out.println("**********");  
         
         System.out.println("El valor de la posición 3 será eliminado");
-        lista.EliminarPorPosicion(3);
+        lista.deleteP(3);
         System.out.println(lista);
         
         System.out.println("Borraremos al inicio");
-        lista.EliminarPrimero();
+        lista.DeleteFirst();
         System.out.println(lista);
         
         System.out.println("Borraremos al final");
-        lista.EliminarUltimo();
+        lista.DeleteLast();
         System.out.println(lista);
         
         System.out.println("**********"); 
         
-        System.out.println("Busca el valor 18");
-        System.out.println("Esta en la posición: "+ lista.Buscar(18));
+        System.out.println("Busca el valor 21");
+        System.out.println("Esta en la posición: "+ lista.Search(21));
         
         System.out.println("**********"); 
         
         System.out.println("Actualizaremos el valor 10 por el 50");
-        lista.Actualizar(10, 50);
+        lista.Refresh(10, 50);
         System.out.println(lista);
         
         

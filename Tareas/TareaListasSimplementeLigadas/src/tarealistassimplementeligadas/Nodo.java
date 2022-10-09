@@ -9,38 +9,38 @@ package tarealistassimplementeligadas;
  * @author Justin
  */
 public class Nodo <T> {
-     private T Dato;
-     private Nodo<T> Siguiente;
+     private T Data;
+     private Nodo<T> Next;
      
      public Nodo(T valor ) {
-         this.Dato= valor;
+         this.Data= valor;
     }
      
-     public Nodo(T Dato, Nodo<T> Sguiente){
-     this.Dato= Dato;
-     this.Siguiente=Sguiente;
+     public Nodo(T Data, Nodo<T> Next){
+     this.Data= Data;
+     this.Next=Next;
 
      }    
     
-      public void setDato(T Dato) {
-        this.Dato = Dato;
+      public void setData(T Data) {
+        this.Data = Data;
     }
       
-       public T getDato() {
-        return Dato;
+       public T getData() {
+        return Data;
     }
 
-    public Nodo<T> getSiguiente() {
-        return Siguiente;
+    public Nodo<T> getNext() {
+        return Next;
     }
 
-    public void setSiguiente(Nodo<T> Siguiente) {
-        this.Siguiente = Siguiente;
+    public void setNext(Nodo<T> Next) {
+        this.Next = Next;
     }
 
     @Override
     public String toString() {
-        return "[" + Dato + "] ---> ";
+        return "[" + Data + "] ---> ";
     }
      
     

@@ -10,142 +10,128 @@ package tarealistassimplementeligadas;
  */
 public class Lista <T>{
     private Nodo<T> head;
-    int tamanio;
+    int Longitud;
     
     /*public ListaLigada<T>{
 } 
   */ 
-    public boolean estaVacio(){
+    public boolean itsEmpty(){
     return this.head == null;
     }
     
-    public int getTamanio(){
-    int tamaño = 0;
+    public int getLongitud(){
+    int longitud = 0;
         Nodo<T> curr = head;
 
         while(curr != null) {
-            curr = curr.getSiguiente();
-            tamaño++;
+            curr = curr.getNext();
+            longitud++;
         }
-        return tamaño;
+        return longitud;
     }
     
-    public int Buscar(T valor) {
-        int indiceDePosicion = 0;
-        Nodo<T> recorrido = head;
-        while(recorrido != null){
-            if(recorrido.getDato() == valor) {
-                return indiceDePosicion;
+    public int Search(T valor) {
+        int iP = 0;
+        Nodo<T> r = head;
+        while(r != null){
+            if(r.getData() == valor) {
+                return iP;
             }
-            recorrido = recorrido.getSiguiente();
-            indiceDePosicion++;
+            r = r.getNext();
+            iP++;
         }
         return -1;
     }
     
-    public void agregarAlInicio(T valor){
+    public void addI(T valor){
      Nodo<T> newNode = new Nodo<>(valor, head);
         head = newNode;
     }
     
-    public void agragarAlFInal(T valor) {
-        if(estaVacio()) {
+    public void addF (T valor) {
+        if(itsEmpty()) {
             Nodo<T> newNode = new Nodo<>(valor);
             head = newNode;
             return;
         }
-         Nodo<T> recorrido = head;
-        while(recorrido.getSiguiente()!= null){
-            recorrido = recorrido.getSiguiente();
+         Nodo<T> r = head;
+        while(r.getNext()!= null){
+            r = r.getNext();
         }
         Nodo<T> newNodo = new Nodo<>(valor );
-        recorrido.setSiguiente(newNodo);
+        r.setNext(newNodo);
 }
 
-    public void agragarDespuesDe(T referencia, T valor) {
-        if(Buscar(referencia) < 0) return;
+    public void addD(T ref, T valor) {
+        if(Search(ref) < 0) return;
 
-        Nodo<T> recorrido = head;
-        while(recorrido.getSiguiente()!= null && recorrido.getDato() != referencia){
-            recorrido = recorrido.getSiguiente();
+        Nodo<T> r = head;
+        while(r.getNext()!= null && r.getNext() != ref){
+            r = r.getNext();
         }
-        Nodo<T> newNode = new Nodo<>(valor, recorrido.getSiguiente());
-        recorrido.setSiguiente(newNode);
+        Nodo<T> newNode = new Nodo<>(valor, r.getNext());
+        r.setNext(newNode);
     }
        
     
-     public void EliminarPorPosicion(int indice) {
-        if(this.getTamanio()<= indice || estaVacio()|| indice < 0) return;
+     public void deleteP(int indice) {
+        if(this.getLongitud()<= indice || itsEmpty()|| indice < 0) return;
         if(indice == 0) {
-            EliminarPrimero();
+            DeleteFirst();
             return;
         }
     int indexPosition = 0;
         Nodo<T> prevNode = null;
         Nodo<T> recorrido = head;
 
-        while(recorrido.getSiguiente()!= null && indexPosition < indice){
+        while(recorrido.getNext()!= null && indexPosition < indice){
             prevNode =recorrido;
-            recorrido = recorrido.getSiguiente();
+            recorrido = recorrido.getNext();
             indexPosition++;
         }
-        prevNode.setSiguiente(recorrido.getSiguiente());
+        prevNode.setNext(recorrido.getNext());
      }
      
-      public void EliminarPrimero() {
-        if(estaVacio()) return;
-        head = head.getSiguiente();
+      public void DeleteFirst() {
+        if(itsEmpty()) return;
+        head = head.getNext();
     }
      
-     public void EliminarUltimo() {
-        if(estaVacio()) return;
-        if(getTamanio()== 1) {
-            EliminarPrimero();
+     public void DeleteLast() {
+        if(itsEmpty()) return;
+        if(getLongitud()== 1) {
+            DeleteFirst();
             return;
         }
-        Nodo<T> previo = null;
-        Nodo<T> recorrido = head;
-        while(recorrido.getSiguiente()!= null){
-            previo = recorrido;
-            recorrido= recorrido.getSiguiente();
+        Nodo<T> p = null;
+        Nodo<T> r = head;
+        while(r.getNext()!= null){
+            p = r;
+            r= r.getNext();
         }
-        previo.setSiguiente(null);
+        p.setNext(null);
     }
      
-     public void Actualizar(T a_buscar, T valor){
-        if(Buscar(a_buscar) < 0) return;
+     public void Refresh (T a_search, T valor){
+        if(Search(a_search) < 0) return;
 
-        Nodo<T> recorrido = head;
-        while(recorrido != null && recorrido.getDato() != a_buscar){
-            recorrido = recorrido.getSiguiente();
+        Nodo<T> r = head;
+        while(r != null && r.getData() != a_search){
+            r = r.getNext();
         }
-        if(recorrido.getDato() != a_buscar) return;
-        recorrido.setDato(valor);
+        if(r.getData() != a_search) return;
+        r.setData(valor);
     }
-     
-     /*public void Transversal(){
-     Nodo temporal= head;
-     
-         while (temporal !=null) {
-             
-             
-         }
-     
-     
-     
-     }
-     */
-     
-     
+       
      @Override
     public String toString() {
-        String ListaLigada = "";
-        Nodo<T> recorrido = head;
-        while(recorrido != null){
-            ListaLigada += recorrido ;
-           recorrido = recorrido .getSiguiente();
+        String Lista = "";
+        Nodo<T> r = head;
+        while(r != null){
+            Lista += r ;
+           r = r .getNext();
         }
-        return ListaLigada;
+        return Lista;
     }
      
      
