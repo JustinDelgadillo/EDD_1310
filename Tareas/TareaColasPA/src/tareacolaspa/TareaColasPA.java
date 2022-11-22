@@ -39,7 +39,7 @@ public class TareaColasPA {
         
         Barco.enqueue(4,"Vigia");
         
-        Barco.enqueue(4, "Tibonel");
+        Barco.enqueue(4, "Timonel");
         
         Barco.enqueue(5, "Capitan");
         
